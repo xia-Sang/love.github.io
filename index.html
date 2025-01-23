@@ -79,6 +79,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .timer-item {
@@ -86,6 +87,8 @@
             padding: 10px 20px;
             border-radius: 8px;
             min-width: 80px;
+            flex: 1;
+            max-width: 120px;
         }
 
         .timer-number {
@@ -215,6 +218,36 @@
             .footer-section {
                 width: 100%;
                 min-width: auto;
+            }
+
+            .timer-container {
+                gap: 10px;
+                padding: 0 10px;
+            }
+
+            .timer-item {
+                padding: 8px 12px;
+                min-width: 60px;
+            }
+
+            .timer-number {
+                font-size: 20px;
+            }
+
+            .timer-label {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .timer-container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+
+            .timer-item {
+                max-width: none;
             }
         }
 

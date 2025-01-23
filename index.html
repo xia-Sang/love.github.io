@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我们的恋爱空间</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .header {
+            background: white;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-text {
+            color: #ff6b81;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .couple-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .couple-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .heart {
+            color: #ff4757;
+            font-size: 24px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .name {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #2f3542;
+        }
+
+        .timer-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .timer-title {
+            color: #ff6b81;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .timer-item {
+            background: #fff0f5;
+            padding: 10px 20px;
+            border-radius: 8px;
+            min-width: 80px;
+        }
+
+        .timer-number {
+            color: #ff4757;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .timer-label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .cards-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px 0;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-title {
+            color: #ff6b81;
+            margin-bottom: 10px;
+        }
+
+        .card-content {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 600px) {
+            .cards-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .couple-container {
+                gap: 20px;
+            }
+            
+            .avatar {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding: 30px 0;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 8px 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #ff6b81;
+        }
+
+        .icp img, .police-beian img {
+            vertical-align: middle;
+            margin-right: 5px;
+            height: 16px;
+        }
+
+        .copyright {
+            font-weight: 500;
+        }
+
+        .powered-by {
+            color: #ff6b81;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-section {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+
+        /* 添加页脚相关样式 */
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+
+        .main-content {
+            flex: 1 0 auto;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer {
+            flex-shrink: 0;
+            width: 100%;
+            padding: 8px 0;
+            color: #999;
+            font-size: 12px;
+            text-align: center;
+            background: #fafafa;
+        }
+
+        .footer-content {
+            max-width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            white-space: nowrap;
+            padding: 0 40px;
+        }
+
+        .footer a {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .footer img {
+            height: 12px;
+            margin-right: 3px;
+            position: relative;
+            top: -1px;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                font-size: 11px;
+                padding: 6px 0;
+            }
+            .footer-content {
+                gap: 20px;
+                padding: 0 20px;
+            }
+            .main-content {
+                padding: 15px;
+            }
+            .cards-section {
+                grid-template-columns: 1fr;
+                padding: 15px 0;
+            }
+            .couple-section {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <header class="header">
+            <div class="header-text">
+                <span>💝 最爱小严啦！ 💝</span>
+                <span>💝 有了你，我的生活才精彩 💝</span>
+            </div>
+        </header>
+
+        <div class="couple-section">
+            <div class="couple-container">
+                <div>
+                    <img src="./static/img/left.jpg" alt="男生头像" class="avatar">
+                    <div class="name">夏桑</div>
+                </div>
+                <div class="heart">❤️</div>
+                <div>
+                    <img src="./static/img/right.jpg" alt="女生头像" class="avatar">
+                    <div class="name">小严</div>
+                </div>
+            </div>
+
+            <div class="timer-section">
+                <div class="timer-title">和小严在一起的时间</div>
+                <div class="timer-container">
+                    <div class="timer-item">
+                        <div class="timer-number" id="days">0</div>
+                        <div class="timer-label">天</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-number" id="hours">00</div>
+                        <div class="timer-label">小时</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-number" id="minutes">00</div>
+                        <div class="timer-label">分钟</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-number" id="seconds">00</div>
+                        <div class="timer-label">秒</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cards-section">
+            <a href="html/wishes.html" class="card" style="text-decoration: none;">
+                <h3 class="card-title">祈愿墙</h3>
+                <p class="card-content">💝 记录友友们的祝福</p>
+            </a>
+            <a href="html/daily.html" class="card" style="text-decoration: none;">
+                <h3 class="card-title">恋爱日常</h3>
+                <p class="card-content">💝 在一起的时光</p>
+            </a>
+            <a href="html/plans.html" class="card" style="text-decoration: none;">
+                <h3 class="card-title">一起要做的事情</h3>
+                <p class="card-content">📝 我们的一起进步</p>
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <span>© 2025 我们的恋爱空间. All Rights Reserved.</span>
+            <span>Powered by Love ❤️</span>
+        </div>
+    </footer>
+
+    <script>
+        // 设置恋爱开始的时间
+        const startDate = new Date('2024-10-1').getTime();
+        
+        function updateTimer() {
+            const now = new Date().getTime();
+            const diff = now - startDate;
+            
+            // 计算天数、小时、分钟和秒数
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            // 更新显示
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // 每秒更新一次
+        setInterval(updateTimer, 1000);
+        // 立即执行一次，避免延迟
+        updateTimer();
+    </script>
+</body>
+</html> 

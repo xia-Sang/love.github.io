@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>祈愿墙 - 我们的恋爱空间</title>
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #ff6b81;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(255, 107, 129, 0.2);
+        }
+
+        .wishes-wall {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+        }
+
+        .wishes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .wish-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 4px 6px rgba(0, 0, 0, 0.02),
+                0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .wish-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #ff6b81, #ff8e9e);
+            border-radius: 15px 15px 0 0;
+        }
+
+        .wish-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            position: relative;
+            padding-top: 10px;
+        }
+
+        .wish-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #95a5a6;
+            font-size: 14px;
+            border-top: 1px solid #f5f6f7;
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        .wish-author {
+            font-weight: 500;
+            color: #ff6b81;
+        }
+
+        .wish-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 8px 12px rgba(0, 0, 0, 0.05),
+                0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 15px;
+            }
+            .wishes-wall {
+                padding: 20px;
+            }
+            .wishes-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .wish-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <a href="../index.html" class="back-button">返回首页</a>
+        <div class="wishes-wall">
+            <div class="wishes-grid">
+                
+                <div class="wish-card">
+                    <div class="wish-content">愿你们幸福美满，永远相爱！</div>
+                    <div class="wish-footer">
+                        <span class="wish-author">小明</span>
+                        <span class="wish-date">2024-02-14</span>
+                    </div>
+                </div>
+                
+                <div class="wish-card">
+                    <div class="wish-content">祝福你们白头偕老！</div>
+                    <div class="wish-footer">
+                        <span class="wish-author">小红</span>
+                        <span class="wish-date">2024-02-13</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="footer-content">
+        <span>© 2025 我们的恋爱空间. All Rights Reserved.</span>
+        <span>Powered by Love ❤️</span>
+    </div>
+</footer>
+
+<style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .main-content {
+        flex: 1 0 auto;
+    }
+
+    .footer {
+        flex-shrink: 0;
+        width: 100%;
+        padding: 8px 0;
+        color: #999;
+        font-size: 12px;
+        text-align: center;
+        background: #fafafa;
+        position: sticky;
+        bottom: 0;
+    }
+
+    .footer-content {
+        max-width: 1800px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        white-space: nowrap;
+        padding: 0 40px;
+    }
+
+    .footer a {
+        color: #999;
+        text-decoration: none;
+    }
+
+    .footer img {
+        height: 12px;
+        margin-right: 3px;
+        position: relative;
+        top: -1px;
+    }
+
+    @media (max-width: 768px) {
+        .footer {
+            font-size: 11px;
+            padding: 6px 0;
+        }
+        .footer-content {
+            gap: 20px;
+            padding: 0 20px;
+        }
+    }
+</style> 
+</body>
+</html> 
